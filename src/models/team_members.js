@@ -11,12 +11,11 @@ const memberSchema = new mongoose.Schema({
     role: {
         type: String,
         required: true,
-        anum: ['Backend - Node.js', 'Design', 'Flutter', 'Frontend']
+        enum: ['Backend - Node.js', 'Design', 'Flutter', 'Frontend']
     },
     imageUrl: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     }
 });
 const Member = mongoose.model('Member', memberSchema);

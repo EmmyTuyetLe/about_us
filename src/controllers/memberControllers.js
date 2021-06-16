@@ -1,23 +1,5 @@
 const Member = require('../models/team_members');
 
-exports.createNewMember = function(req,res){
-    try {
-        const { firstName, lastName, role, imageUrl } = req.body
-        let newMember = Member.create({ firstName, lastName, role, imageUrl})
-        res.json({ message: `New member successfully added!`, newMember })
-      } catch (err) {
-        res.status(500).json({ message: err.message })
-      }
-    }
-
-Member.findOne({imageUrl: req.body.imageUrl}), (err, existingMember) => {
-    if(err){
-        return res.status(500).json({err})
-    }
-    if(existingMember){
-        return res.status(400).json({ message: "This team member has already been added."})
-    }
-
 exports.fetchMembers = (req, res) => {
     let conditions ={};
     if(req.query.role){
@@ -42,4 +24,4 @@ exports.fetchSingleMember = (req, res) => {
             return res.status(200).json({ member })
         }
     })
-}}}
+}}
