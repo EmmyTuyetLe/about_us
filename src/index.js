@@ -19,7 +19,7 @@ dbSetup();
 
 //==================================================
 // Routes
-//==================================================
+//=================================================
 
 //Placeholder routes for webpages
 app.get('/', (req, res) => {
@@ -34,7 +34,7 @@ app.get('/faq', (req, res) => {
   res.send('FAQ');
 });
 
-app.get('/about-us', (req, res) => {
+app.get('/members', (req, res) => {
   res.send('About Us');
 });
 
